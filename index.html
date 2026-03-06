@@ -40,8 +40,26 @@
 
     <!-- React CDN -->
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- We normally DO NOT use CDN in real React projects.
+         Reason 1: These files are coming from a different external source (unpkg CDN).
+         Reason 2: If React releases a new version, we must manually change the link.
+         Reason 3: Large projects need bundling and dependency management.
+
+         Instead we install React using npm:
+         npm install react react-dom
+
+         React will be stored inside node_modules and bundled by tools like Parcel.
+
+         In package.json versions look like:
+         ^  → called the "caret" version range in npm. It allows minor and patch updates automatically (example: 18.2.0 → 18.3.1).
+         ~  → called the "tilde" version range in npm. It allows only patch updates (example: 18.2.0 → 18.2.5).
+
+         That is why modern React apps import React from node_modules instead of CDN.
+    -->
+
+      <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+           <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+
 
     <!-- Creating multiple elements using React -->
 
@@ -53,7 +71,7 @@
         root.render(heading);
     </script> -->
 
-    <script src="./app.js"></script>
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>

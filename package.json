@@ -1,0 +1,30 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "This is Namaste React",
+  "keywords": [],
+  "homepage": "https://github.com/Adityagaur7078/Namaste-React#readme",
+  "bugs": {
+    "url": "https://github.com/Adityagaur7078/Namaste-React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adityagaur7078/Namaste-React.git"
+  },
+  "license": "ISC",
+  "author": "Aditya Gaur",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browserslist": [
+    "last two versions"
+  ]
+}

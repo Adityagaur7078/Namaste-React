@@ -33,24 +33,30 @@
 
 
 
+// Import react and react-DOM from node_modules
+
+import React from "react"
+import ReactDOM from "react-dom/client"
+
+
 const container = React.createElement(
     "div",
     { id: "parent", className: "color" },
     [
         React.createElement(
             "div",
-            { id: "child1" },
+            { id: "child1", key: "child1" },
             [
-                React.createElement("h1", {}, "This is Heading 1"),
-                React.createElement("h2", {}, "This is Heading 2")
+                React.createElement("h1", { key: "h1-1" }, "This is Heading 1"),
+                React.createElement("h2", { key: "h2-1" }, "This is Heading 2")
             ]
         ),
         React.createElement(
             "div",
-            { id: "child2" },
+            { id: "child2", key: "child2" },
             [
-                React.createElement("h1", {}, "This is Heading 1"),
-                React.createElement("h2", {}, "This is Heading 2")
+                React.createElement("h1", { key: "h1-2" }, "This is Heading 1"),
+                React.createElement("h2", { key: "h2-2" }, "This is Heading 2")
             ]
         )
     ]

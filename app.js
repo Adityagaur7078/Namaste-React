@@ -39,6 +39,9 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 
 
+// React.createElement() creates a React element (a JavaScript object), and ReactDOM renders that object into a real HTML DOM element in the browser.
+
+
 const container = React.createElement(
     "div",
     { id: "parent", className: "color" },

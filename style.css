@@ -1,4 +1,9 @@
 .color {
-    color: indigo;
-    background-color: orangered;
+    color: #4b0082;
+    background-color: #ff4500;
+}
+
+.red {
+    color: #ff0000;
+    background-color: #0000ff;
 }

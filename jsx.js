@@ -79,11 +79,52 @@ const HeadingComponent3 = () => <h1>This is from Functional Component 3</h1>;
 const HeadingComponent = () => (
   <div className="red">
     <h1>This is from Functional Component </h1>
+    {HeadingComponent1()}
+    <HeadingComponent1></HeadingComponent1>
     <HeadingComponent1 />
   </div>
 );
 
+// {} allows us to use JavaScript expressions inside JSX
 
+
+
+// --------------------------------------
+// Practical Examples of {} in JSX
+// --------------------------------------
+
+const name = "Aditya";
+const number1 = 100;
+const number2 = 300;
+
+const Demo = () => {
+  return (
+    <div>
+
+      {/* Example 1: Numbers */}
+      <h2>100 + 300 = {100 + 300}</h2>
+
+      {/* Example 2: Variables */}
+      <h2>Hello {name}</h2>
+
+      {/* Example 3: Expression using variables */}
+      <h2>Sum = {number1 + number2}</h2>
+
+      {/* Example 4: Function Call */}
+      <div>{HeadingComponent1()}</div>
+
+      {/* Example 5: Component (Correct Way) */}
+      <HeadingComponent1 />
+
+      {/* Example 6: console.log */}
+      <h2>{console.log("Hello World from JSX")}</h2>
+
+      {/* Example 7: Conditional Rendering */}
+      <h2>{true ? "This is TRUE" : "This is FALSE"}</h2>
+
+    </div>
+  );
+};
 
 
 
@@ -113,7 +154,7 @@ const App = () => (
       <HeadingComponent2 />
       <HeadingComponent3 />
       <HeadingComponent />
-
+      <Demo />
     </>
   );
 

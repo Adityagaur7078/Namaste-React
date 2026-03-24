@@ -17,6 +17,7 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
+    "small": "parcel \"Small Project/index.html\"",
     "test": "jest"
   },
   "devDependencies": {

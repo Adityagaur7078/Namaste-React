@@ -1908,15 +1908,15 @@ const resObj = [
     }
 ];
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+// not using keys (not acceptable) <<<< index as key <<<< unique id (best practice)
 
 
 
 const Main = () => (
     <div className="restaurant-container">
 
-        {resObj.slice(0, 20).map((res, index) => (
-            <RestaurantContainer key={index} resData={res} />
+        {resObj.map((restaurant) => (
+            <RestaurantContainer key={restaurant.info.id} resData={restaurant} />
         ))}
 
     </div>
@@ -1931,5 +1931,11 @@ const AppLayout = () => (
         <Footer />
     </>
 )
+
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 
 root.render(<AppLayout />)

@@ -30,6 +30,6 @@
     "react-dom": "^19.2.4"
   },
   "browserslist": [
-    "last two versions"
+    "last 2 versions"
   ]
 }

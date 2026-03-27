@@ -7,23 +7,6 @@ A focused learning repo to understand how React works internally:
 
 ## ⚙️ Run the Project
 
-```bash
-git clone https://github.com/Adityagaur7078/Namaste-React.git
-cd Namaste-React
-npm install
-npm start
-```
-
-Open: [http://localhost:1234](http://localhost:1234)
-
-### Run Small Project
-
-```bash
-npm run small
-```
-
----
-
 ## 🧠 How This Project Runs
 
 `index.html` is the entry file used by Parcel.
@@ -41,6 +24,24 @@ or
 ```
 
 👉 Change the `src` to switch between **JSX learning (jsx.js)** and **React.createElement practice (app.js)**.
+
+```bash
+git clone https://github.com/Adityagaur7078/Namaste-React.git
+cd Namaste-React
+npm install
+npm start
+```
+
+Open: [http://localhost:1234](http://localhost:1234)
+
+
+---
+
+### Run Small Project
+
+```bash
+npm run small
+```
 
 ---
 
@@ -120,29 +121,35 @@ Examples:
 
 ---
 
-## 📁 Project Structure
-
-```
-Namaste React/
-├── index.html   (controls which file runs (jsx.js or app.js))
-├── jsx.js       (JSX + components learning)
-├── app.js       (React.createElement practice)
-├── style.css
-├── package.json
-└── Small Project/
-    ├── index.html
-    ├── webpage.js
-    └── style.css
-```
-
----
-
 ## ⚠️ Important Notes
 
 - `npm start` runs the project using **index.html** as the entry file
 - The `<script type="module" src="...">` inside index.html decides which JavaScript file is executed (e.g., `jsx.js` or `app.js`)
 - `npm run small` runs the separate project inside the **Small Project** folder
 - Parcel always runs the file that you specify as the entry point
+
+---
+
+// --------------------------------------
+// Types of Export and Import in JavaScript
+// --------------------------------------
+
+// 1️⃣ Default Export
+
+// Export
+`export default Component;`
+
+// Import (no curly braces)
+`import Component from "./path";`
+
+
+// 2️⃣ Named Export
+
+// Export
+`export const name = "Aditya";`
+
+// Import (must use curly braces)
+`import { name } from "./path";`
 
 ---
 

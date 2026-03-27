@@ -15,9 +15,11 @@
   "author": "Aditya Gaur",
   "type": "commonjs",
   "scripts": {
-    "start": "parcel \"Learning/index.html\"",
-    "build": "parcel build index.html",
-    "small": "parcel \"Small Project/index.html\"",
+    "start:learning": "parcel \"Learning/index.html\"",
+    "build:learning": "parcel build \"Learning/index.html\"",
+    
+    "start:small": "parcel \"Small Project/index.html\"",
+    "build:small": "parcel build \"Small Project/index.html\"",
     "test": "jest"
   },
   "devDependencies": {

@@ -29,18 +29,17 @@ or
 git clone https://github.com/Adityagaur7078/Namaste-React.git
 cd Namaste-React
 npm install
-npm start
+npm run start:learning
 ```
 
 Open: [http://localhost:1234](http://localhost:1234)
-
 
 ---
 
 ### Run Small Project
 
 ```bash
-npm run small
+npm run start:small
 ```
 
 ---
@@ -123,10 +122,10 @@ Examples:
 
 ## ⚠️ Important Notes
 
-- `npm start` runs the project using **index.html** as the entry file
-- The `<script type="module" src="...">` inside index.html decides which JavaScript file is executed (e.g., `jsx.js` or `app.js`)
-- `npm run small` runs the separate project inside the **Small Project** folder
-- Parcel always runs the file that you specify as the entry point
+* `npm run start:learning` runs the project using **Learning/index.html** as the entry file
+* The `<script type="module" src="...">` inside index.html decides which JavaScript file is executed (e.g., `jsx.js` or `app.js`)
+* `npm run start:small` runs the separate project inside the **Small Project** folder
+* Parcel always runs the file that you specify as the entry point
 
 ---
 
@@ -141,7 +140,6 @@ Examples:
 
 // Import (no curly braces)
 `import Component from "./path";`
-
 
 // 2️⃣ Named Export
 

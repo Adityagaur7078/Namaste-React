@@ -149,6 +149,104 @@ Examples:
 // Import (must use curly braces)
 `import { name } from "./path";`
 
+
+---
+
+# React Hooks
+ (Normal JS utility functions)
+- useState() // Superpowerful state Variables in react
+- useEffect()
+
+---
+
+## 🔄 Reconciliation in React
+
+Reconciliation is the process React uses to update the UI efficiently.
+
+In simple words:
+React compares the **old Virtual DOM** with the **new Virtual DOM**, finds the difference, and updates only what has changed in the real DOM.
+
+---
+
+## 🧠 Simple Understanding
+
+React does not update the whole page. It updates only the part that actually changes.
+
+Example:
+
+**Before:**
+
+```html
+<h1>Hello Aditya</h1>
+```
+
+**After:**
+
+```html
+<h1>Hello World</h1>
+```
+
+React updates only the text (Aditya → World) instead of replacing the whole element.
+
+---
+
+## ⚙️ How Reconciliation Works
+
+1. State or props change
+2. React creates a new Virtual DOM
+3. React compares it with the old Virtual DOM
+4. Finds the difference
+5. Updates only the changed part in the real DOM
+
+---
+
+## 🔄 Flow
+
+State Change
+↓
+New Virtual DOM
+↓
+Reconciliation (Diffing)
+↓
+Update only changed parts
+↓
+Real DOM updated
+
+---
+
+## ⚡ Diffing Rules
+
+1. Same element → update only content
+   Example:
+
+   ```html
+   <h1>Hello</h1> → <h1>World</h1>
+   ```
+
+2. Different element → replace completely
+   Example:
+
+   ```html
+   <h1>Hello</h1> → <p>Hello</p>
+   ```
+
+---
+
+## 🎯 One Line Definition
+
+Reconciliation is the process where React compares old and new Virtual DOM and updates only the changed parts in the real DOM.
+
+---
+
+## 💡 Summary
+
+Reconciliation makes React fast by:
+
+* Minimizing DOM updates
+* Improving performance
+* Updating only necessary parts
+
+
 ---
 
 ## 👨‍💻 Author

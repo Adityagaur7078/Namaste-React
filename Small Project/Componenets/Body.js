@@ -1,14 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockdata";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+
+useEffect(() => {
+  fetchData();
+}, []);
+
+const fetchData = async () => {
+  const data = await fetch(
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.19513389999999&lng=78.19209719999999&page_type=DESKTOP_WEB_LISTING"
+  );
+
+  const json = await data.json();
+
+  console.log(json);
+
+  // 🔍 Find correct card dynamically
+  const restaurants =
+    json?.data?.cards
+      ?.map((card) => card?.card?.card)
+      ?.find((c) => c?.gridElements?.infoWithStyle?.restaurants)
+      ?.gridElements?.infoWithStyle?.restaurants || [];
+
+  setListOfRestaurants(restaurants);
+};
 
   // 🔍 Search Function
   const handleSearch = () => {
-    const filtered = resList.filter((res) =>
+    const filtered = listOfRestaurants.filter((res) =>
       res.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
     setListOfRestaurants(filtered);
@@ -25,7 +47,7 @@ const Body = () => {
           <button
             className="btn-filter"
             onClick={() => {
-              const topRated = resList.filter(
+              const topRated = listOfRestaurants.filter(
                 (res) => res.info.avgRating >= 4.5
               );
               setListOfRestaurants(topRated);

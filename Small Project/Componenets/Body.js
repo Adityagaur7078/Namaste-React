@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./shimmerUI";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -27,6 +28,11 @@ const fetchData = async () => {
 
   setListOfRestaurants(restaurants);
 };
+
+
+if (listOfRestaurants.length === 0) {
+  return <Shimmer />;
+}
 
   // 🔍 Search Function
   const handleSearch = () => {

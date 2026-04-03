@@ -30,10 +30,6 @@ const fetchData = async () => {
 };
 
 
-if (listOfRestaurants.length === 0) {
-  return <Shimmer />;
-}
-
   // 🔍 Search Function
   const handleSearch = () => {
     const filtered = listOfRestaurants.filter((res) =>
@@ -42,7 +38,9 @@ if (listOfRestaurants.length === 0) {
     setListOfRestaurants(filtered);
   };
 
-  return (
+
+  // Conditional Rendering
+  return listOfRestaurants.length === 0 ? (<Shimmer />) : (
     <div className="body">
 
       {/* ⭐ Top Bar (Filter + Search) */}

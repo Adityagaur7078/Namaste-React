@@ -5,29 +5,31 @@ import Shimmer from "./shimmerUI";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filterListOfRestaurants, setFilterListOfRestaurants] = useState([]);
 
-useEffect(() => {
-  fetchData();
-}, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-const fetchData = async () => {
-  const data = await fetch(
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.19513389999999&lng=78.19209719999999&page_type=DESKTOP_WEB_LISTING"
-  );
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.19513389999999&lng=78.19209719999999&page_type=DESKTOP_WEB_LISTING"
+    );
 
-  const json = await data.json();
+    const json = await data.json();
 
-  console.log(json);
+    console.log(json);
 
-  // 🔍 Find correct card dynamically
-  const restaurants =
-    json?.data?.cards
-      ?.map((card) => card?.card?.card)
-      ?.find((c) => c?.gridElements?.infoWithStyle?.restaurants)
-      ?.gridElements?.infoWithStyle?.restaurants || [];
+    // 🔍 Find correct card dynamically
+    const restaurants =
+      json?.data?.cards
+        ?.map((card) => card?.card?.card)
+        ?.find((c) => c?.gridElements?.infoWithStyle?.restaurants)
+        ?.gridElements?.infoWithStyle?.restaurants || [];
 
-  setListOfRestaurants(restaurants);
-};
+    setListOfRestaurants(restaurants);
+    setFilterListOfRestaurants(restaurants);
+  };
 
 
   // 🔍 Search Function
@@ -35,7 +37,7 @@ const fetchData = async () => {
     const filtered = listOfRestaurants.filter((res) =>
       res.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
-    setListOfRestaurants(filtered);
+    setFilterListOfRestaurants(filtered);
   };
 
 
@@ -54,7 +56,7 @@ const fetchData = async () => {
               const topRated = listOfRestaurants.filter(
                 (res) => res.info.avgRating >= 4.5
               );
-              setListOfRestaurants(topRated);
+              setFilterListOfRestaurants(topRated);
             }}
           >
             Top Rated Restaurant
@@ -78,11 +80,11 @@ const fetchData = async () => {
 
       </div>
 
-{/* not using keys (not acceptable) <<<< index as key <<<< unique id (best practice) */}
+      {/* not using keys (not acceptable) <<<< index as key <<<< unique id (best practice) */}
 
       {/* 🍔 Restaurant Cards */}
       <div className="restaurant-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filterListOfRestaurants.map((restaurant) => (
           <RestaurantCard
             key={restaurant.info.id}
             resData={restaurant}

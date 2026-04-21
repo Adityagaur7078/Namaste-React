@@ -247,6 +247,9 @@ Reconciliation makes React fast by:
 * Updating only necessary parts
 
 
+// Monolith architecture
+// Microservice Arcitecture
+
 ---
 
 ## 👨‍💻 Author

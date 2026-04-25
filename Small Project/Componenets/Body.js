@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import Shimmer from "./shimmerUI";
+import Shimmer from "./ShimmerUI";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");

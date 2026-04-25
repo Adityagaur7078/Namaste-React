@@ -39,10 +39,17 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
+  color: black;
 }
 
+.nav-items li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 /* Hover effect */
-.nav-items li:hover {
+.nav-items li a:hover {
   color: white;
 }
 
@@ -225,4 +232,95 @@
   text-align: center;
   background: #222;
   color: white;
+}
+
+/* ================= ABOUT PAGE ================= */
+
+.about-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-container h1 {
+  color: #f06633;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 16px;
+}
+
+.about-highlight {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff3ed;
+  border-radius: 10px;
+}
+
+.about-highlight ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-highlight li {
+  margin: 8px 0;
+}
+
+/* ================= CONTACT PAGE ================= */
+
+.contact-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-container h1 {
+  color: #f06633;
+  margin-bottom: 15px;
+}
+
+.contact-box {
+  background: #fff3ed;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid #f06633;
+  border-radius: 8px;
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: linear-gradient(45deg, #f06633, #ff4500);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
 }

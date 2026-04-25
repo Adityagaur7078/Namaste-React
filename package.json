@@ -17,7 +17,6 @@
   "scripts": {
     "start:learning": "parcel \"Learning/index.html\"",
     "build:learning": "parcel build \"Learning/index.html\"",
-    
     "start:small": "parcel \"Small Project/index.html\"",
     "build:small": "parcel build \"Small Project/index.html\"",
     "test": "jest"
@@ -27,7 +26,9 @@
   },
   "dependencies": {
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "react-router": "^6.22.3",
+    "react-router-dom": "^6.22.3"
   },
   "browserslist": [
     "last 2 versions"

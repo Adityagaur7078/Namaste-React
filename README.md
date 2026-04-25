@@ -252,6 +252,12 @@ Reconciliation makes React fast by:
 
 ---
 
+# Two types Routing in web apps
+ - Client Side Routing
+ - Server Side Routing
+
+---
+
 ## 👨‍💻 Author
 
 Aditya Gaur

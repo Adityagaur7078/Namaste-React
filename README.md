@@ -258,6 +258,18 @@ Reconciliation makes React fast by:
 
 ---
 
+# Redux Toolkit
+ - Install @reduxjs/toolkit and react-redux
+ - Build our store
+ - Connect our store to our app
+ - Slice (cartSlice)
+ - Dispatch (action)
+ - Selector
+
+---
+
+
+
 ## 👨‍💻 Author
 
 Aditya Gaur
